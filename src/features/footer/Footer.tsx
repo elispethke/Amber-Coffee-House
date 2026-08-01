@@ -57,6 +57,17 @@ export function Footer() {
       <p className="mt-12 text-center font-sans text-xs text-ivory/50">
         © {currentYear} {SITE_NAME}. All rights reserved.
       </p>
+      <p className="mt-2 text-center font-sans text-xs text-ivory/50">
+        Developed by{' '}
+        <a
+          href="https://www.eproxstudio.com"
+          target="_blank"
+          rel="noreferrer"
+          className="link-underline text-ivory/70"
+        >
+          Eprox Studio
+        </a>
+      </p>
     </footer>
   )
 }
