@@ -1,13 +1,15 @@
 import { clsx } from 'clsx'
 import { Container } from '@/shared/components/Container'
 import { Reveal } from '@/shared/components/Reveal'
+import { useSectionDepth } from '@/shared/hooks/useSectionDepth'
 import { useNewsletterForm } from './hooks/useNewsletterForm'
 
 export function Newsletter() {
+  const sectionRef = useSectionDepth<HTMLElement>()
   const { email, status, errorMessage, handleEmailChange, handleSubmit } = useNewsletterForm()
 
   return (
-    <section className="bg-espresso py-section-sm sm:py-section">
+    <section ref={sectionRef} className="bg-espresso py-section-sm sm:py-section">
       <Container className="max-w-2xl text-center">
         <Reveal>
           <span className="mb-3 inline-block font-sans text-xs font-semibold uppercase tracking-[0.2em] text-gold">

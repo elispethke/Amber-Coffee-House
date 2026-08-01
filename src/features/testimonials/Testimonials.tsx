@@ -4,18 +4,22 @@ import { clsx } from 'clsx'
 import { Container } from '@/shared/components/Container'
 import { SectionHeading } from '@/shared/components/SectionHeading'
 import { Reveal } from '@/shared/components/Reveal'
+import { useSectionDepth } from '@/shared/hooks/useSectionDepth'
 import { TESTIMONIALS } from './data'
 import { useTestimonialCarousel } from './hooks/useTestimonialCarousel'
 import { TestimonialCard } from './components/TestimonialCard'
 
 export function Testimonials() {
+  const sectionRef = useSectionDepth<HTMLElement>()
   const { activeIndex, goNext, goPrev, goTo } = useTestimonialCarousel(TESTIMONIALS.length)
   const activeTestimonial = TESTIMONIALS[activeIndex]
 
   return (
-    <section className="bg-sand/40 py-section-sm sm:py-section">
+    <section ref={sectionRef} className="bg-sand/40 py-section-sm sm:py-section">
       <Container>
-        <SectionHeading eyebrow="Testimonials" title="Loved by our regulars" />
+        <Reveal>
+          <SectionHeading eyebrow="Testimonials" title="Loved by our regulars" />
+        </Reveal>
 
         <Reveal className="relative mt-12">
           <div className="flex items-center justify-center gap-4">

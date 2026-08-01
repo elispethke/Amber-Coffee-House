@@ -7,6 +7,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: '$3.50',
     description: 'A double shot of our house blend, pulled slow for a rich, syrupy body.',
     category: 'Hot',
+    image: '/assets/images/menu-espresso.jpg',
   },
   {
     id: 'cappuccino',
@@ -14,6 +15,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: '$4.50',
     description: 'Equal parts espresso, steamed milk, and microfoam, finished with cocoa dust.',
     category: 'Hot',
+    image: '/assets/images/menu-cappuccino.jpg',
   },
   {
     id: 'flat-white',
@@ -21,6 +23,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: '$4.75',
     description: 'Velvety micro-foam over a double ristretto for a smooth, rounded cup.',
     category: 'Hot',
+    image: '/assets/images/menu-flat-white.jpg',
   },
   {
     id: 'caramel-macchiato',
@@ -28,6 +31,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: '$5.25',
     description: 'Vanilla-steamed milk marked with espresso and a thread of caramel.',
     category: 'Hot',
+    image: '/assets/images/menu-caramel-macchiato.jpg',
   },
   {
     id: 'iced-latte',
@@ -35,6 +39,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: '$5.00',
     description: 'Chilled espresso and cold milk over hand-cracked ice, lightly sweetened.',
     category: 'Iced',
+    image: '/assets/images/menu-iced-latte.jpg',
   },
   {
     id: 'cold-brew',
@@ -42,6 +47,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: '$4.75',
     description: 'Steeped for eighteen hours for a naturally sweet, low-acid finish.',
     category: 'Iced',
+    image: '/assets/images/menu-cold-brew.jpg',
   },
   {
     id: 'iced-mocha',
@@ -49,6 +55,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: '$5.50',
     description: 'Dark chocolate, espresso, and cold milk, topped with whipped cream.',
     category: 'Iced',
+    image: '/assets/images/menu-iced-mocha.jpg',
   },
   {
     id: 'almond-croissant',
@@ -56,6 +63,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: '$4.00',
     description: 'Laminated dough filled with almond cream, baked fresh every morning.',
     category: 'Desserts',
+    image: '/assets/images/menu-almond-croissant.jpg',
   },
   {
     id: 'cinnamon-roll',
@@ -63,6 +71,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: '$4.50',
     description: 'Soft-proofed dough, brown sugar swirl, and a warm vanilla glaze.',
     category: 'Desserts',
+    image: '/assets/images/menu-cinnamon-roll.jpg',
   },
   {
     id: 'tiramisu-slice',
@@ -70,5 +79,6 @@ export const MENU_ITEMS: MenuItem[] = [
     price: '$6.00',
     description: 'Espresso-soaked ladyfingers layered with mascarpone cream.',
     category: 'Desserts',
+    image: '/assets/images/menu-tiramisu.jpg',
   },
 ]

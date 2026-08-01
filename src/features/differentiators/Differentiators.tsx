@@ -1,16 +1,18 @@
 import { Container } from '@/shared/components/Container'
 import { SectionHeading } from '@/shared/components/SectionHeading'
 import { Reveal } from '@/shared/components/Reveal'
+import { useSectionDepth } from '@/shared/hooks/useSectionDepth'
 import { DIFFERENTIATORS } from './data'
 
 export function Differentiators() {
+  const sectionRef = useSectionDepth<HTMLElement>()
+
   return (
-    <section className="bg-cream py-section-sm sm:py-section">
+    <section ref={sectionRef} className="bg-cream py-section-sm sm:py-section">
       <Container>
-        <SectionHeading
-          eyebrow="Why Amber & Oak"
-          title="Why our regulars keep coming back"
-        />
+        <Reveal>
+          <SectionHeading eyebrow="Why Amber & Oak" title="Why our regulars keep coming back" />
+        </Reveal>
 
         <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {DIFFERENTIATORS.map((item, index) => (

@@ -1,21 +1,32 @@
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import { Container } from '@/shared/components/Container'
-import { PlaceholderMedia } from '@/shared/components/PlaceholderMedia'
 import { Reveal } from '@/shared/components/Reveal'
+import { useMaskReveal } from '@/shared/hooks/useMaskReveal'
+import { useParallaxLayer } from '@/shared/hooks/useParallaxLayer'
+import { useSectionDepth } from '@/shared/hooks/useSectionDepth'
 import { LOCATION_CONTENT } from './content'
 
 export function Location() {
+  const sectionRef = useSectionDepth<HTMLElement>()
+  const maskRef = useMaskReveal<HTMLDivElement>({ direction: 'right', scrub: true })
+  const parallaxRef = useParallaxLayer<HTMLDivElement>({ distance: 100 })
+
   return (
-    <section id="contact" className="bg-cream py-section-sm sm:py-section">
+    <section ref={sectionRef} id="contact" className="bg-cream py-section-sm sm:py-section">
       <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <Reveal>
-          <PlaceholderMedia
-            icon={MapPin}
-            label="Map showing Amber & Oak location on Maple Grove Avenue"
-            className="aspect-[4/3] w-full rounded-3xl shadow-card"
-            iconClassName="h-14 w-14"
-          />
-        </Reveal>
+        <div
+          ref={maskRef}
+          className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-card"
+        >
+          <div ref={parallaxRef} className="absolute inset-x-0 -top-[15%] h-[130%] w-full">
+            <img
+              src="/assets/images/location-storefront.jpg"
+              alt="Amber & Oak storefront exterior"
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
+          </div>
+        </div>
 
         <Reveal delay={0.15}>
           <span className="mb-3 inline-block font-sans text-xs font-semibold uppercase tracking-[0.2em] text-gold">

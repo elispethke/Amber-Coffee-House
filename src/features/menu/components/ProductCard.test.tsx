@@ -9,6 +9,7 @@ const item: MenuItem = {
   price: '$5.25',
   description: 'A test-only description of a very fine latte.',
   category: 'Iced',
+  image: '/assets/images/menu-iced-latte.jpg',
 }
 
 describe('ProductCard', () => {

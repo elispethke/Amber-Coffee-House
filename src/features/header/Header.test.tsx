@@ -1,4 +1,4 @@
-import { render, screen, waitForElementToBeRemoved } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, it, expect } from 'vitest'
 import { Header } from './Header'
@@ -31,8 +31,8 @@ describe('Header', () => {
     await user.click(screen.getByRole('button', { name: /open menu/i }))
     await user.click(screen.getByRole('button', { name: /close menu/i }))
 
-    await waitForElementToBeRemoved(() =>
-      screen.queryByRole('dialog', { name: /mobile navigation/i }),
-    )
+    await waitFor(() => {
+      expect(screen.queryByRole('dialog', { name: /mobile navigation/i })).not.toBeInTheDocument()
+    })
   })
 })
